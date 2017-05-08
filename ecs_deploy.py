@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 """
-    ecs-deploy.py
+    ecs_deploy.py
     ~~~~~~~~~~~~~
     deployment script for AWS ECS
 """
@@ -233,6 +233,7 @@ class CLI(object):
 
         elif fn == 'register_task_definition':
             kwargs['family'] = self.task_definition['family']
+            kwargs['volumes'] = self.task_definition['volumes']
             kwargs['containerDefinitions'] = \
                 self.task_definition['containerDefinitions']
             # optional kwargs from args
